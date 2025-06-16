@@ -309,12 +309,12 @@ html {
 }
 
 .body-text a {
-  color: #a1866d;
+  color: #c53030;
   text-decoration: none;
 }
 
 .body-text a:hover {
-  color: #c2b191;
+  color: #e53e3e;
 }
 
 .content-text {
@@ -336,7 +336,7 @@ html {
 }
 
 .small-text a {
-  color: #a1866d;
+  color: #c53030;
   text-decoration: none;
 }
 
@@ -431,7 +431,7 @@ html {
   border-radius: 0.25rem;
   overflow: hidden;
   text-overflow: ellipsis;
-  background-color: #a1866d;
+  background-color: #c53030;
   color: #ffffff;
   transition: color 0.25s ease, background-color 0.25s ease;
   border: 0;
@@ -439,7 +439,7 @@ html {
 }
 
 .custom-form button:hover {
-  background-color: #c2b191;
+  background-color: #e53e3e;
 }
 
 .custom-form input::placeholder,
@@ -520,7 +520,7 @@ html {
   border-radius: 0;
   flex-direction: row-reverse;
   transition: color 0.25s ease, background-color 0.25s ease;
-  background-color: #c2b191;
+  background-color: #e53e3e;
   color: #ffffff;
   border: 0;
   cursor: pointer;
@@ -531,7 +531,7 @@ html {
 }
 
 .custom-button:hover {
-  background-color: #a6926d;
+  background-color: #9b2c2c;
 }
 
 /* Icon Styles */
@@ -599,7 +599,7 @@ html {
 }
 
 .accent-container {
-  background-color: #c2b191;
+  background-color: #e53e3e;
 }
 
 .dark-container {
@@ -631,7 +631,7 @@ html {
 
 .divider-accent:before {
   width: 40rem;
-  background-color: #a2866f;
+  background-color: #c53030;
   height: 2px;
   border-radius: 0px;
 }
@@ -774,23 +774,23 @@ html {
 }
 
 .text-accent {
-  color: #a1866d;
+  color: #c53030;
 }
 
 .text-accent-hover:hover {
-  color: #c2b191;
+  color: #e53e3e;
 }
 
 .bg-accent {
-  background-color: #a1866d;
+  background-color: #c53030;
 }
 
 .bg-accent-hover:hover {
-  background-color: #c2b191;
+  background-color: #e53e3e;
 }
 
 .bg-primary {
-  background-color: #8daab4;
+  background-color: #f8f0f0;
 }
 
 .bg-light {
@@ -811,10 +811,10 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #a1866d;
+  background: #c53030;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #c2b191;
+  background: #e53e3e;
 }

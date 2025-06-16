@@ -17,13 +17,13 @@ export default function HomePage() {
 
             {/* Desktop Menu */}
             <div className="hidden md:flex space-x-8 lg:space-x-12 text-gray-800 font-medium uppercase tracking-wider text-sm">
-              <a href="#services" className="hover:text-gray-600 transition-colors">
+              <a href="#services" className="hover:text-red-600 transition-colors">
                 Hospital Services
               </a>
-              <a href="#insurance" className="hover:text-gray-600 transition-colors">
+              <a href="#insurance" className="hover:text-red-600 transition-colors">
                 Insurance Planning
               </a>
-              <a href="#contact" className="hover:text-gray-600 transition-colors">
+              <a href="#contact" className="hover:text-red-600 transition-colors">
                 Contact
               </a>
             </div>
@@ -383,7 +383,7 @@ export default function HomePage() {
                     href="https://www.instagram.com/martino_mark_expert/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-gray-400 hover:text-red-400 transition-colors"
                   >
                     <Instagram className="w-6 h-6 sm:w-8 sm:h-8" />
                   </a>
@@ -391,7 +391,7 @@ export default function HomePage() {
                     href="https://web.facebook.com/martino.mark.9"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-gray-400 hover:text-red-400 transition-colors"
                   >
                     <Facebook className="w-6 h-6 sm:w-8 sm:h-8" />
                   </a>
