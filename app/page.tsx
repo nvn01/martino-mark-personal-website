@@ -1,11 +1,16 @@
 "use client"
 
 import Image from "next/image"
-import { Instagram, Facebook, Menu, X } from "lucide-react"
+import { Instagram, Facebook, Menu, X, CheckCircle, AlertCircle } from "lucide-react"
 import { useState } from "react"
 
 export default function HomePage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [formStatus, setFormStatus] = useState({
+    show: false,
+    isSuccess: false,
+    message: ""
+  })
 
   return (
     <div className="min-h-screen bg-primary">
@@ -69,7 +74,7 @@ export default function HomePage() {
       </nav>
 
       {/* Hero Section */}
-      <section className="hero-container relative min-h-screen flex items-center justify-center px-4">
+      <section className="hero-container relative min-h-screen flex items-center justify-center px-4 pt-24 md:pt-28 pb-8 md:pb-12">
         <Image
           src="/placeholder.svg?height=1080&width=1920"
           alt="Hospital expert and insurance consultation"
@@ -78,8 +83,8 @@ export default function HomePage() {
           priority
         />
         <div className="hero-content text-center text-white max-w-4xl mx-auto">
-          <p className="hero-subtitle mb-4 text-sm sm:text-base">Martino Mark</p>
-          <h1 className="hero-title text-2xl sm:text-3xl md:text-4xl lg:text-6xl mb-6 sm:mb-8 leading-tight text-center px-4">
+          <p className="hero-subtitle mb-4 mt-4 text-sm sm:text-base">Martino Mark</p>
+          <h1 className="hero-title text-2xl sm:text-3xl md:text-4xl lg:text-6xl mb-6 sm:mb-8 leading-tight text-center tracking-normal">
             Expert Healthcare Navigation & Insurance Solutions
           </h1>
           <p className="text-base sm:text-lg lg:text-xl text-white/90 max-w-3xl mx-auto px-4">
@@ -257,26 +262,108 @@ export default function HomePage() {
             {/* Questions Form */}
             <div className="space-y-6 lg:col-span-1">
               <h3 className="style1 mb-6 sm:mb-8 text-sm sm:text-base">Questions</h3>
-              <form className="space-y-4 sm:space-y-6">
+              {formStatus.show && (
+                <div className={`mb-6 p-4 rounded flex items-center ${formStatus.isSuccess ? 'bg-green-50 border border-green-200' : 'bg-red-50 border border-red-200'}`}>
+                  {formStatus.isSuccess ? (
+                    <CheckCircle className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
+                  ) : (
+                    <AlertCircle className="w-5 h-5 text-red-500 mr-3 flex-shrink-0" />
+                  )}
+                  <p className={`text-sm ${formStatus.isSuccess ? 'text-green-700' : 'text-red-700'}`}>
+                    {formStatus.message}
+                  </p>
+                  <button 
+                    type="button" 
+                    className="ml-auto text-gray-400 hover:text-gray-600"
+                    onClick={() => setFormStatus(prev => ({ ...prev, show: false }))}
+                  >
+                    <X className="w-4 h-4" />
+                  </button>
+                </div>
+              )}
+              <form className="space-y-4 sm:space-y-6" onSubmit={async (e) => {
+                e.preventDefault();
+                const form = e.currentTarget;
+                const formData = new FormData(form);
+                const name = formData.get('name') as string;
+                const email = formData.get('email') as string;
+                const message = formData.get('message') as string;
+                
+                // Form validation
+                if (!name || !email || !message) {
+                  setFormStatus({
+                    show: true,
+                    isSuccess: false,
+                    message: 'Please fill out all fields.'
+                  });
+                  return;
+                }
+                
+                try {
+                  // Set button to loading state
+                  const submitButton = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+                  const originalText = submitButton.innerText;
+                  submitButton.innerText = 'SENDING...';
+                  submitButton.disabled = true;
+                  
+                  // Send the form data to our API route
+                  const response = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name, email, message }),
+                  });
+                  
+                  const data = await response.json();
+                  
+                  if (response.ok) {
+                    setFormStatus({
+                      show: true,
+                      isSuccess: true,
+                      message: 'Message sent successfully! We will get back to you soon.'
+                    });
+                    form.reset();
+                  } else {
+                    throw new Error(data.error || 'Failed to send message');
+                  }
+                } catch (error) {
+                  console.error('Error sending message:', error);
+                  setFormStatus({
+                    show: true,
+                    isSuccess: false,
+                    message: 'Failed to send message. Please try again later.'
+                  });
+                } finally {
+                  // Reset button state
+                  const submitButton = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+                  submitButton.innerText = 'SUBMIT';
+                  submitButton.disabled = false;
+                }
+              }}>
                 <div>
                   <input
                     type="text"
+                    name="name"
                     placeholder="Name"
                     className="w-full h-10 sm:h-12 px-3 sm:px-4 bg-black/20 border border-white/20 rounded text-white placeholder-white/60 focus:outline-none focus:border-white/40 text-sm sm:text-base"
+                    required
                   />
                 </div>
                 <div>
                   <input
                     type="email"
+                    name="email"
                     placeholder="Email"
                     className="w-full h-10 sm:h-12 px-3 sm:px-4 bg-black/20 border border-white/20 rounded text-white placeholder-white/60 focus:outline-none focus:border-white/40 text-sm sm:text-base"
+                    required
                   />
                 </div>
                 <div>
                   <textarea
+                    name="message"
                     placeholder="Message"
                     rows={5}
                     className="w-full p-3 sm:p-4 bg-black/20 border border-white/20 rounded text-white placeholder-white/60 resize-none focus:outline-none focus:border-white/40 text-sm sm:text-base"
+                    required
                   />
                 </div>
                 <button
