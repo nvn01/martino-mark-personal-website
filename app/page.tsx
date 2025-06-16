@@ -90,12 +90,12 @@ export default function HomePage() {
       </section>
 
       {/* About Section */}
-      <section className="py-12 sm:py-16 lg:py-20 content-container">
+      <section className="py-12 sm:py-16 lg:py-20 bg-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-16">
             <div className="w-full order-2 lg:order-1 min-w-0">
               <div>
-                <h2 className="text-2xl sm:text-3xl font-serif mb-4 sm:mb-6 text-gray-800 break-words">
+                <h2 className="text-2xl sm:text-3xl font-serif mb-2 text-gray-800 break-words">
                   What is it like to work with me?
                 </h2>
                 <div className="divider divider-accent mb-6 sm:mb-8"></div>
@@ -137,13 +137,13 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="relative order-1 lg:order-2">
+            <div className="w-full order-1 lg:order-2">
               <Image
                 src="/placeholder.svg?height=800&width=600"
                 alt="Healthcare and insurance consultation"
                 width={600}
                 height={800}
-                className="w-full h-auto rounded-lg"
+                className="w-full h-auto rounded-lg max-w-md mx-auto lg:max-w-none"
               />
             </div>
           </div>
