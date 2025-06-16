@@ -769,6 +769,10 @@ html {
 }
 
 /* Utility Classes */
+.font-montserrat {
+  font-family: "Montserrat", sans-serif;
+}
+
 .text-accent {
   color: #a1866d;
 }

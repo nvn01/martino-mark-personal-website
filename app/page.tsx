@@ -101,7 +101,7 @@ export default function HomePage() {
                 <div className="divider divider-accent mb-6 sm:mb-8"></div>
               </div>
               
-              <div className="space-y-6 text-sm sm:text-base leading-relaxed">
+              <div className="space-y-6 text-sm sm:text-base leading-relaxed font-montserrat">
                 <div className="break-words">
                   As a Hospital Expert, I understand that navigating the healthcare system can be overwhelming and
                   confusing. I don't believe in a one-size-fits-all approach. Instead, I take the time to understand
@@ -173,7 +173,7 @@ export default function HomePage() {
                 <div className="divider divider-accent mb-6 sm:mb-8"></div>
               </div>
 
-              <div className="space-y-6 text-sm sm:text-base leading-relaxed">
+              <div className="space-y-6 text-sm sm:text-base leading-relaxed font-montserrat">
                 <div className="break-words">
                   <strong>Current Position:</strong> Agency Director at Prudential Syariah (10+ years)
                 </div>
