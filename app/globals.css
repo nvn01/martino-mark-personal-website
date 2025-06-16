@@ -679,7 +679,7 @@ html {
   }
 
   .content-text {
-    font-size: 1.5em;
+    font-size: 1.25em;
     line-height: 1.5;
   }
 
@@ -698,6 +698,20 @@ html {
 
   .hero-container {
     min-height: 33rem;
+  }
+}
+
+@media (max-width: 650px) {
+  .content-text {
+    font-size: 1em;
+    line-height: 1.4;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  p {
+    max-width: 100%;
+    overflow-wrap: break-word;
   }
 }
 
@@ -733,7 +747,7 @@ html {
   }
 
   .content-text {
-    font-size: 1.5em;
+    font-size: 0.9em;
   }
 
   .small-text {

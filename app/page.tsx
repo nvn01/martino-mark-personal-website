@@ -95,24 +95,24 @@ export default function HomePage() {
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             <div className="space-y-6 lg:space-y-8 order-2 lg:order-1">
               <div>
-                <h2 className="text-2xl sm:text-3xl font-serif mb-4 sm:mb-6 text-gray-800">
+                <h2 className="text-2xl sm:text-3xl font-serif mb-4 sm:mb-6 text-gray-800 break-words">
                   What is it like to work with me?
                 </h2>
                 <div className="divider divider-accent mb-6 sm:mb-8"></div>
-                <div className="space-y-4 sm:space-y-6 content-text leading-relaxed text-sm sm:text-base">
-                  <p>
+                <div className="space-y-4 sm:space-y-6 content-text leading-relaxed">
+                  <p className="break-words">
                     As a Hospital Expert, I understand that navigating the healthcare system can be overwhelming and
                     confusing. I don't believe in a one-size-fits-all approach. Instead, I take the time to understand
                     your specific needs, whether it's finding the right specialist, booking appointments, or
                     understanding your insurance coverage options.
                   </p>
-                  <p>
+                  <p className="break-words">
                     With over 10 years of experience in the insurance industry as an Agency Director at Prudential, I
                     bring a unique perspective that combines healthcare navigation with comprehensive insurance
                     planning. This dual expertise allows me to provide holistic solutions that protect both your health
                     and financial well-being.
                   </p>
-                  <p>
+                  <p className="break-words">
                     I have established partnerships with 50+ major hospitals in Indonesia including EMC Group, Eka
                     Hospital Group, Mayapada Group, Mitra Keluarga Group, and Mandaya Bethsaida. For international
                     healthcare needs, I can connect you with top facilities in Malaysia and Singapore including
@@ -123,9 +123,9 @@ export default function HomePage() {
               </div>
 
               <div>
-                <h3 className="text-xl sm:text-2xl font-serif mb-4 sm:mb-6 text-gray-800">How to Get Started?</h3>
+                <h3 className="text-xl sm:text-2xl font-serif mb-4 sm:mb-6 text-gray-800 break-words">How to Get Started?</h3>
                 <div className="divider divider-accent mb-6 sm:mb-8"></div>
-                <p className="content-text leading-relaxed text-sm sm:text-base">
+                <p className="content-text leading-relaxed break-words">
                   Simple: use the form at the bottom of the page to schedule a free consultation. Whether you need help
                   with hospital appointments, international healthcare access, or want to discuss your insurance
                   options, I'm here to help.
